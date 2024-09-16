@@ -1,4 +1,10 @@
 # SpringBoot using Redis
+This README features how to configure Redis with Springboot.
+
+**NOTE** : If redis is not installed we can use redis docker image. We can do by using:
+```shell
+sudo docker run -p 6379:6379 redis
+```
 
 ## Steps to get started with redis
 1. Add the following into pom.xml 

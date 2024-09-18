@@ -37,8 +37,8 @@ be creating the schema for our GraphQL.
       1. type Query is used for sharing the data from API to Client.
          ```graphql
              type Query {
-              findAll: Player
-                 findOne(id: ID): Player
+                findAll: Player
+                findOne(id: ID): Player
              }
          ```
       2. Now these functions need to be implemented in the Controllers of SpringBoot as such:

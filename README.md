@@ -65,7 +65,8 @@ be creating the schema for our GraphQL.
          ```java 
          import org.springframework.stereotype.Controller;
          import org.springframework.graphql.data.method.annotation.MutationMapping;
-
+         import org.springframework.graphql.data.method.annotation.Argument;
+         
          @Controller
          public class PlayerController {
                    

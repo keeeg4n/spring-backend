@@ -29,9 +29,9 @@ be creating the schema for our GraphQL.
     1. type Response or Request
     ```graphql
       type Player {
-      id: ID
-      name: String
-   }
+        id: ID
+        name: String
+      }
    ```
    2. type Query
       1. type Query is used for sharing the data from API to Client.

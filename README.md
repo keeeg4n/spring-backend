@@ -61,7 +61,7 @@ be creating the schema for our GraphQL.
               }
          }
           ```
-         3. We use `@Argument` to take argument values from GraphQL. Implemetation:
+      3. We use `@Argument` to take argument values from GraphQL. Implemetation:
          ```java 
          import org.springframework.stereotype.Controller;
          import org.springframework.graphql.data.method.annotation.MutationMapping;

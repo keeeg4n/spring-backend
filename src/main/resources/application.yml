@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: rpc-spring
+
+grpc:
+  server:
+    port: 8090

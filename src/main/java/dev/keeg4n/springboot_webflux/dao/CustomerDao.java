@@ -26,6 +26,12 @@ public class CustomerDao {
                 .map(i -> new Customer(i, "Customer " + i));
     }
 
+    public Flux<Customer> getCustomerList() {
+        return Flux.range(0, 10)
+                .doOnNext(i -> System.out.println("(Reactive) Processing count " + i))
+                .map(i -> new Customer(i, "Customer " + i));
+    }
+
     private static void sleep(int i) {
         try {
             Thread.sleep(1000);

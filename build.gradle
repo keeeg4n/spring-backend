@@ -1,0 +1,49 @@
+plugins {
+	id 'org.jetbrains.kotlin.jvm' version '1.9.25'
+	id 'org.jetbrains.kotlin.plugin.spring' version '1.9.25'
+	id 'org.springframework.boot' version '3.3.4'
+	id 'io.spring.dependency-management' version '1.1.6'
+	id 'org.jetbrains.kotlin.plugin.jpa' version '1.9.25'
+	id 'org.flywaydb.flyway' version '9.22.3'
+}
+
+group = 'dev.keeg4n'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'com.fasterxml.jackson.module:jackson-module-kotlin'
+	implementation 'org.jetbrains.kotlin:kotlin-reflect'
+	implementation group: 'org.postgresql', name: 'postgresql', version: '42.6.0'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation group: 'org.flywaydb', name: 'flyway-core', version: '9.22.3'
+	testImplementation 'org.jetbrains.kotlin:kotlin-test-junit5'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+kotlin {
+	compilerOptions {
+		freeCompilerArgs.addAll '-Xjsr305=strict'
+	}
+}
+
+flyway {
+	url = 'jdbc:postgresql://localhost:5432/author-book-db'
+	user = 'postgres'
+	password = 'postgres'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

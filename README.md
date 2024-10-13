@@ -43,7 +43,7 @@ kafka-topics.sh --bootstrap-server localhost:9092 --describe --topic quickstart
 ```shell
 kafka-console-producer.sh --broker-list localhost:9092 --topic quickstart
 ```
--- TODO: add kafka producer image here --
+![create-topics-and-publish](./assets/kafka-create-topic.png)
 
 Sending CSV files through CLI
 ```shell
@@ -54,4 +54,79 @@ kafka-console-producer.sh --broker-list localhost:9092 --topic topi < path_to_cs
 ```shell
 kakfa-console-consumer.sh --topic quickstart --from-beginning --bootstrap-server localhost:9092
 ```
--- TODO: add kafka consumer image here --
+![consume-topics](/assets/kafka-consume.png)
+
+## Kafka in Spring Boot
+### Producer
+1. Adding dependencies
+```xml
+<dependency>
+    <groupId>org.springframework.kafka</groupId>
+    <artifactId>spring-kafka</artifactId>
+    <version>3.2.0</version>
+</dependency>
+```
+2. Creating Service and class
+```java
+@Service
+@Slf4j
+public class KafkaMessagePublisher {
+
+    @Autowired
+    private KafkaTemplate<String, Object> kafkaTemplate;
+
+    public void sendMessageToTopic(String message) {
+        CompletableFuture<SendResult<String, Object>> topic = kafkaTemplate.send(
+                "topic-batman",
+                message
+        );
+        topic.whenComplete((result, ex) -> {
+            if (Objects.isNull(ex)) {
+                log.info("Sent message = [{}] with offset = [{}]", message, result.getRecordMetadata().offset());
+            } else {
+                log.error("Unable to send message = [{}] due to : {}", message, ex.getMessage());
+            }
+        });
+    }
+}
+```
+3. Using the service we can publish events in the Kafka.
+4. Creating a Topic.
+```java
+@Configuration
+public class KafkaConfiguration {
+    @Bean
+    public NewTopic createTopic() {
+        return new NewTopic("topic-batman", 3, (short) 1);
+    }
+}
+```
+
+### Consumer
+1. Dependencies are similar to the producer.
+2. Creating service layer in consumer
+```java
+@Service
+@Slf4j
+public class KafkaMessageListener {
+
+    private final String topicName = "topic-batman";
+
+    // Consumers are there as a demo!! Not a good way to create consumers like these
+    @KafkaListener(topics = topicName, groupId = "jt-group-1")
+    public void consumer1(String message) {
+        log.info("Consumer 1 message: {}", message);
+    }
+
+    @KafkaListener(topics = topicName, groupId = "jt-group-1")
+    public void consumer2(String message) {
+        log.info("Consumer 2 message: {}", message);
+    }
+
+    @KafkaListener(topics = topicName, groupId = "jt-group-1")
+    public void consumer3(String message) {
+        log.info("Consumer 3 message: {}", message);
+    }
+}
+```
+**NOTE**: Creating groups in such manner is bad practice. Good practice is to use concurrency and then developing will give a better throughput.

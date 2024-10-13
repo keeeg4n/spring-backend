@@ -130,3 +130,5 @@ public class KafkaMessageListener {
 }
 ```
 **NOTE**: Creating groups in such manner is bad practice. Good practice is to use concurrency and then developing will give a better throughput.
+
+NEXT UP: Serialization and Deserialization of JSON.

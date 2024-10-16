@@ -34,7 +34,7 @@ kakfa-topics.sh --bootstrap-server localhost:9092 --create --topic quickstart --
 kafka-topics.sh --bootstrap-server localhost:9092 --list
 ```
 
-### Describe Topics
+### Describe Topic
 ```shell
 kafka-topics.sh --bootstrap-server localhost:9092 --describe --topic quickstart
 ```
@@ -90,8 +90,8 @@ public class KafkaMessagePublisher {
     }
 }
 ```
-3. Using the service we can publish events in the Kafka.
-4. Creating a Topic.
+3. Using the service we can publish events in the Kafka. 
+### Creating a Topic.
 ```java
 @Configuration
 public class KafkaConfiguration {
@@ -131,4 +131,11 @@ public class KafkaMessageListener {
 ```
 **NOTE**: Creating groups in such manner is bad practice. Good practice is to use concurrency and then developing will give a better throughput.
 
-NEXT UP: Serialization and Deserialization of JSON.
+## Serialization and Deserialization of JSON.
+* Kafka won't accept any data type other than stream of bytes.
+* This we need to manage serialization of the JSON values to produce and consume events.
+* To achieve this we need to configure kafka's serialization and de-serialization.
+
+Error
+![Error](./assets/kafka_error.png)
+

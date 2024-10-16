@@ -21,10 +21,6 @@
 	<developers>
 		<developer/>
 	</developers>
-    <modules>
-        <module>kafka-producer</module>
-		<module>kafka-consumer</module>
-	</modules>
     <scm>
 		<connection/>
 		<developerConnection/>

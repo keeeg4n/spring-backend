@@ -5,19 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f69107a-3940-4e6b-bb22-1cd0dd292264" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/kafka-consume.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/kafka-create-topic.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kafka-consumer/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kafka-consumer/src/main/java/dev/keeg4n/service/KafkaMessageListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kafka-consumer/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kafka-producer/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kafka-producer/src/main/java/dev/keeg4n/configuration/KafkaConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kafka-producer/src/main/java/dev/keeg4n/controller/EventController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kafka-producer/src/main/java/dev/keeg4n/service/KafkaMessagePublisher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kafka-producer/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka-consumer/src/main/java/dev/keeg4n/model/dto/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka-consumer/src/main/java/dev/keeg4n/service/CustomerKafkaListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka-producer/src/main/java/dev/keeg4n/model/dto/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kafka-consumer/src/main/java/dev/keeg4n/service/KafkaMessageListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-consumer/src/main/java/dev/keeg4n/service/KafkaMessageListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kafka-consumer/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-consumer/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kafka-producer/src/main/java/dev/keeg4n/controller/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-producer/src/main/java/dev/keeg4n/controller/EventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kafka-producer/src/main/java/dev/keeg4n/service/KafkaMessagePublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-producer/src/main/java/dev/keeg4n/service/KafkaMessagePublisher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kafka-producer/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-producer/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,24 +58,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Application.Kafka Consumer.executor": "Run",
-    "Application.Kafka Producer.executor": "Run",
-    "Application.Main (1).executor": "Run",
-    "Application.Main.executor": "Run",
-    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Spring/Kafka",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/keeg4n/dev/spring-backend/assets",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Application.Kafka Consumer.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Kafka Producer.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Spring/Kafka&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/keeg4n/dev/spring-backend/assets&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets" />

@@ -1,5 +1,6 @@
 package dev.keeg4n.controller;
 
+import dev.keeg4n.model.dto.Customer;
 import dev.keeg4n.service.KafkaMessagePublisher;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -25,5 +26,11 @@ public class EventController {
             kafkaMessagePublisher.sendMessageToTopic("Message: " + i + " " + message);
         }
         return ResponseEntity.ok("Message published successfully");
+    }
+
+    @PostMapping("customer")
+    public ResponseEntity<String> publishCustomer(@RequestBody Customer customer) {
+        kafkaMessagePublisher.publishCustomer(customer);
+        return ResponseEntity.ok("Published Customer successfully");
     }
 }
